@@ -19,4 +19,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission Requirements")
 	FMissionRequirement MissionRequirement;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission Info")
+	FMissionInfo MissionInfo;
 };
