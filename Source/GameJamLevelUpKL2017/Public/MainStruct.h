@@ -70,6 +70,9 @@ struct FHeroesStats
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Heroes Stats")
 	UTexture2D* MyIcon;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Heroes Stats")
+	int32 HeroIndex;
 };
 
 USTRUCT(BlueprintType)
@@ -84,5 +87,38 @@ struct FMissionRequirement
 	EBonusTraits BonusTraits;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirement")
+	float PenaltySuccessRate = 0.0f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirement")
 	int32 MaxHeroes;
+};
+
+USTRUCT(BlueprintType)
+struct FMissionInfo
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Info")
+	FString MyName;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Info")
+	FString Description;
+};
+
+USTRUCT(BlueprintType)
+struct FHeroesStatsIncrementation
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats Incrementation")
+	float IncrementationAgility;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats Incrementation")
+	float IncrementationStrength;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats Incrementation")
+	float IncrementationCharm;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats Incrementation")
+	float IncrementationIntelligent;
 };
