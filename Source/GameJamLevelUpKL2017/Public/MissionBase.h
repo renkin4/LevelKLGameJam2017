@@ -19,19 +19,4 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission Requirements")
 	FMissionRequirement MissionRequirement;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission Requirements")
-	EDayNight DayNightTraits;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission Requirements")
-	FHeroesTraits HeroesTraits;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission Requirements")
-	float Charm = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission Requirements")
-	float Agility = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission Requirements")
-	float Strength = 0.0f;
-
 };

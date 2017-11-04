@@ -12,8 +12,20 @@ enum class EDayNight : uint8
 	DY_Night	UMETA(DisplayName = "Night")
 };
 
+UENUM(BlueprintType)
+enum class EMissionTraits : uint8
+{
+	MT_Smart	 UMETA(DisplayName = "Smart"),
+	MT_Flithy	 UMETA(DisplayName = "Flithy"),
+	MT_Math		 UMETA(DisplayName = "Math"),
+	MT_Science	 UMETA(DisplayName = "Science"),
+	MT_4		 UMETA(DisplayName = "4"),
+	MT_5		 UMETA(DisplayName = "5"),
+	MT_6		 UMETA(DisplayName = "6")
+};
+
 USTRUCT(BlueprintType)
-struct FHeroesTraits
+struct FHeroesTraitsProgression
 {
 	GENERATED_BODY()
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Traits")
@@ -32,7 +44,7 @@ struct FHeroesStats
 	EDayNight DayNightTraits;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats")
-	FHeroesTraits HeroesTraits;
+	TArray<EMissionTraits> HeroesTraits;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats")
 	float Charm = 0.0f;
@@ -49,18 +61,6 @@ struct FMissionRequirement
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirements")
-	EDayNight DayNightTraits;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirements")
-	FHeroesTraits HeroesTraits;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirements")
-	float Charm = 0.0f;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirements")
-	float Agility = 0.0f;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirements")
-	float Strength = 0.0f;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirement")
+	TArray<EMissionTraits> MissionTraits;
 };
