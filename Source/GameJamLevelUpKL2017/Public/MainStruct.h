@@ -13,6 +13,16 @@ enum class EDayNight : uint8
 };
 
 UENUM(BlueprintType)
+enum class EBonusTraits : uint8
+{
+	BT_Agility			UMETA(DisplayName = "Agility"),
+	BT_Intelligent		UMETA(DisplayName = "Intelligent"),
+	BT_Strength			UMETA(DisplayName = "Strength"),
+	BT_Charm			UMETA(DisplayName = "Charm")
+};
+
+
+UENUM(BlueprintType)
 enum class EMissionTraits : uint8
 {
 	MT_Smart	 UMETA(DisplayName = "Smart"),
@@ -54,6 +64,12 @@ struct FHeroesStats
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats")
 	float Strength = 0.0f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats")
+	float Intelligent = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Heroes Stats")
+	UTexture2D* MyIcon;
 };
 
 USTRUCT(BlueprintType)
@@ -63,4 +79,10 @@ struct FMissionRequirement
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirement")
 	TArray<EMissionTraits> MissionTraits;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirement")
+	EBonusTraits BonusTraits;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mission Requirement")
+	int32 MaxHeroes;
 };
