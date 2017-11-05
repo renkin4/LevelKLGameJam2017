@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Sound/SoundBase.h"
 #include "MainStruct.generated.h"
 
 UENUM(BlueprintType)
@@ -79,6 +80,9 @@ struct FHeroesStats
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats")
 	FString MyName;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats")
+	USoundBase* MySound;
 };
 
 USTRUCT(BlueprintType)
