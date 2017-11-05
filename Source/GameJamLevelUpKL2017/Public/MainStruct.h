@@ -25,13 +25,16 @@ enum class EBonusTraits : uint8
 UENUM(BlueprintType)
 enum class EMissionTraits : uint8
 {
-	MT_Smart	 UMETA(DisplayName = "Smart"),
-	MT_Flithy	 UMETA(DisplayName = "Flithy"),
-	MT_Math		 UMETA(DisplayName = "Math"),
-	MT_Science	 UMETA(DisplayName = "Science"),
-	MT_4		 UMETA(DisplayName = "4"),
-	MT_5		 UMETA(DisplayName = "5"),
-	MT_6		 UMETA(DisplayName = "6")
+	MT_Hero			 UMETA(DisplayName = "Hero"),
+	MT_Protective	 UMETA(DisplayName = "Protective"),
+	MT_Skilled		 UMETA(DisplayName = "Skilled"),
+	MT_Confident	 UMETA(DisplayName = "Confident"),
+	MT_Charming		 UMETA(DisplayName = "Charming"),
+	MT_Smart		 UMETA(DisplayName = "Smart"),
+	MT_Ridiculous	 UMETA(DisplayName = "Ridiculous"),
+	MT_Persuasive	 UMETA(DisplayName = "Persuasive"),
+	MT_Streategist	 UMETA(DisplayName = "Streategist"),
+	MT_Stealth		 UMETA(DisplayName = "Stealth")
 };
 
 USTRUCT(BlueprintType)
@@ -73,6 +76,9 @@ struct FHeroesStats
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Heroes Stats")
 	int32 HeroIndex;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Heroes Stats")
+	FString MyName;
 };
 
 USTRUCT(BlueprintType)
